@@ -78,5 +78,15 @@
       "Flutter"
     ],
     "answerIndex": "Angular"
+  },
+  {
+    "question": "what is capital of USA",
+    "choices": [
+      "washington",
+      "atlanta",
+      "boston",
+      "columbia"
+    ],
+    "answerIndex": "washington"
   }
 ]

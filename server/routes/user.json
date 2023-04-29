@@ -22,5 +22,11 @@
     "lastName": "Agarwal",
     "email": "sudha.agarwal84@gmail.com",
     "password": "123456"
+  },
+  {
+    "firstName": "Swapnil",
+    "lastName": "Dabholkar",
+    "email": "swapnil.dabholkar@gmail.com",
+    "password": "123456"
   }
 ]

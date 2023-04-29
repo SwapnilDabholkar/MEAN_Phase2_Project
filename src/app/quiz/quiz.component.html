@@ -17,6 +17,6 @@
         </div>
         </div>
         <button class="btn btn-primary mt-5 mb-3" (click)="getResult()" [disabled] = "!isAllQuestionAnswered()">Check Result</button>
-        <div *ngIf = "viewResult">{{numberOfCorrectAnswers}}</div>
+        <h2 *ngIf = "viewResult">{{numberOfCorrectAnswers}}</h2>
       </div>
     
