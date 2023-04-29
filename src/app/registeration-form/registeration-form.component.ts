@@ -14,7 +14,7 @@ export class RegisterationFormComponent {
   RegistrationForm = new FormGroup({
     firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
     lastName: new FormControl('',[Validators.required, Validators.minLength(3)]),
-    email: new FormControl('',[Validators.required, Validators.pattern(this.emailPattern), this.emailDomainValidator]),
+    email: new FormControl('',[Validators.required, Validators.pattern(this.emailPattern)]),
     password: new FormControl('',[Validators.required, Validators.minLength(6)])
   });
 
@@ -42,6 +42,5 @@ export class RegisterationFormComponent {
     }
     return null;
   }
-
 
 }

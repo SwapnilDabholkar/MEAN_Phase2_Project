@@ -31,7 +31,6 @@ export class AddQuestionComponent {
 
   addQuestion(questionForm: any) {
   this.newQuestion.choices = this.optionValues.slice(); 
-
     console.log(this.newQuestion);    
     this.ds.addQuestion(this.newQuestion).subscribe({
       next: data=>alert(data.msg),

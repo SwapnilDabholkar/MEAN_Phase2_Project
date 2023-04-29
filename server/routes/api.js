@@ -2,7 +2,6 @@ const express = require('express');
 var api = express.Router();
 const fs = require('fs');
 
-
 api.get('/data', function(req,res){
 
     res.send("Hello World");
@@ -38,8 +37,7 @@ api.get('/quiz', function(req,res){
 
 
 api.post('/register-user', (req,res)=>{
-    const user = {firstName:req.body.firstName, lastName:req.body.lastName, email:req.body.email,password:req.body.password};
-   
+    const user = {firstName:req.body.firstName, lastName:req.body.lastName, email:req.body.email,password:req.body.password};   
 
     fs.readFile(__dirname + '/user.json',(err,data) =>{
         if(err){
@@ -48,7 +46,6 @@ api.post('/register-user', (req,res)=>{
 
         const jsonData = JSON.parse(data);
         jsonData.push(user);
-
         const jsonString = JSON.stringify(jsonData,null,2);
 
         fs.writeFile(__dirname + '/user.json', jsonString, (err)=>{
@@ -68,7 +65,6 @@ api.post('/register-user', (req,res)=>{
 api.post('/check-login', (req,res)=>{
     let email = req.body.email;
     let password = req.body.password;
-
     console.log(email + " " + password);
 
     fs.readFile(__dirname + '/user.json',(err,data) =>{
@@ -77,7 +73,6 @@ api.post('/check-login', (req,res)=>{
         }
         else{
             const jsonData = JSON.parse(data);
-
             const exists = jsonData.some(obj => obj.email === email && obj.password === password);
             console.log(exists);
 
@@ -87,7 +82,6 @@ api.post('/check-login', (req,res)=>{
                 res.status(404).send(false);
               }
         }
-
     });
 })
 
@@ -117,8 +111,6 @@ api.post('/add-question',(req,res) =>{
         })
     })
 })
-
-
 
 module.exports = api;
 
